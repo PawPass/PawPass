@@ -31,6 +31,7 @@
     "mongoose": "^6.5.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-gauge-chart": "^0.4.0",
     "react-graph-vis": "^1.0.7",
     "react-json-view": "^1.21.3",
     "react-redux": "^8.0.2",
