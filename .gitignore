@@ -16,4 +16,4 @@ node_modules/
 .yarn-integrity
 .env
 dist
-
+.DS_Store

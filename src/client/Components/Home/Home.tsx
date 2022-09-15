@@ -11,6 +11,8 @@ import { IReducers } from '../../Interfaces/IReducers';
 import { IClusterMetrics } from "../../Interfaces/IAction";
 import './styles.css';
 import { ClusterTypes } from '../../Interfaces/ICluster';
+import PetCard from '../Cards/petCard';
+import AnimalNavBar from './AnimalNavBar';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -145,12 +147,14 @@ const Home = () => {
 
   return (
     <div className="Kube-port">
+      <AnimalNavBar/>
       <div className="Kube-container">
-        {favClusters}
-        {nonFavClusters}
+        {/* {favClusters}
+        {nonFavClusters} */}
+        <PetCard/>
       </div>
       {noClusterError}
-      <NavBar />
+      {/* <NavBar /> */}
     </div>
   );
 };
