@@ -2,6 +2,23 @@ h3 {
   text-align: center;
 }
 
+.petCardContainer {
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rent {
+  display: flex;
+  justify-content: center;
+}
+
+.petCard {
+  margin: 2%;
+  min-width: 20%;
+}
+
 #Kube {
   background-color: #ffffff;
   padding: 0 8px;

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Store/hooks';
 import { apiRoute } from '../../utils';
 import { setTitle } from '../../Store/actions';
-import { Put } from '../../Services/index';
+import { Put, Get } from '../../Services/index';
 import { IReducers } from '../../Interfaces/IReducers';
 import { Container, Box, Button, TextField } from '@mui/material';
 import './styles.css';
@@ -55,6 +55,17 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = async (): Promise<void> => {
+    try {
+      const res = await Get(
+        apiRoute.getRoute('/auth2')
+      )
+      .catch(err => console.log(err));
+    } catch (err) {
+      console.log('Get failed');
+    }
+  };
+
   const handleEnterKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter') handleLogin();
   };
@@ -71,8 +82,8 @@ const Login = () => {
           textAlign: 'center',
           alignItems: 'center',
           backgroundSize: 'contain',
-          color: '#3a4a5b',
-          bgcolor: '#3a4a5b',
+          color: '#1976d2',
+          bgcolor: 'white',
         }} 
         className="backdrop"
       >
@@ -91,11 +102,11 @@ const Login = () => {
             justifyContent: 'center',
             backgroundRepeat: 'no-repeat',
             padding: '1.5rem',
-            borderRadius: '2%'
+            borderRadius: '2%',
           }}
         >
           <div>
-            <h1>VaaS</h1>
+            <h1>PawPass</h1>
           </div>
           <TextField
               id="login-username-input"
@@ -133,12 +144,13 @@ const Login = () => {
               variant='contained'
               sx={{
                 color: 'white', 
-                backgroundColor: '#3a4a5b', 
+                backgroundColor: '#1976d2', 
                 borderColor: 'white',
               }}
             >
               Login
             </Button>
+            
             <Button 
               className="btn" 
               type="button" 
@@ -146,11 +158,48 @@ const Login = () => {
               variant='contained'
               sx={{
                 color: 'white', 
-                backgroundColor: '#3a4a5b', 
+                backgroundColor: '#1976d2', 
                 borderColor: 'white',
               }}
             >
               Register
+            </Button>
+          </Container>
+          <Container 
+            id = 'buttonContainer2' 
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '.5em',
+              padding: '.5em',
+            }}
+          >
+            <Button 
+              className="btn" 
+              type="button" 
+              onClick={handleGoogleLogin}
+              variant='contained'
+              sx={{
+                color: 'white', 
+                backgroundColor: '#1976d2', 
+                borderColor: 'white',
+              }}
+            >
+              Sign In with Google
+              <img src='../../../../Images/google.png' height="40px"></img>
+            </Button>
+            <Button 
+              className="btn" 
+              type="button" 
+              variant='contained'
+              sx={{
+                color: 'white', 
+                backgroundColor: '#1976d2', 
+                borderColor: 'white',
+              }}
+            >
+              Sign In with Apple
+              <img src='../../../../Images/apple.svg.png' height="30px"></img>
             </Button>
           </Container>
         </Box>

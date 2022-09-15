@@ -10,6 +10,8 @@ import Module from "./Cards/Module";
 import { Get } from "../Services";
 import { apiRoute } from "../utils";
 import { setTitle } from "../Store/actions";
+import FakeSearch from "./Cards/FakeSearch";
+import Rent from "./Cards/rent";
 
 const App = () => {
   const navigate = useNavigate();
@@ -61,6 +63,8 @@ const App = () => {
       <Route path="/register" element={<Register />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/module" element={<Module />} />
+      <Route path="/kolache" element={<FakeSearch />} />
+      <Route path="/rent" element={<Rent />} />
     </Routes>
   );
 };

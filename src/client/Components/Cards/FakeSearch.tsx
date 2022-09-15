@@ -3,7 +3,6 @@ import { useAppSelector, useAppDispatch } from '../../Store/hooks';
 import { storeClusterDbData } from '../../Store/actions';
 import { clusterMetric, nodeMetric } from "../../Queries";
 import { storeClusterQueryData } from "../../Store/actions";
-import NavBar from './NavBar';
 import Kube from '../Cards/Kube';
 import { Get } from '../../Services';
 import { apiRoute } from '../../utils';
@@ -12,7 +11,13 @@ import { IClusterMetrics } from "../../Interfaces/IAction";
 import './styles.css';
 import { ClusterTypes } from '../../Interfaces/ICluster';
 import PetCard from '../Cards/petCard';
-import AnimalNavBar from './AnimalNavBar';
+import AnimalNavBar from '../Home/AnimalNavBar';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -151,7 +156,31 @@ const Home = () => {
       <div className="Kube-container">
         {/* {favClusters}
         {nonFavClusters} */}
-        <PetCard/>
+        
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/kolache.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Kolache
+          </Typography>
+          <h5>Owner: Will Paragraph</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            Kolache is as great as the food and will demand
+            your attention if you spend too much time coding.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+
       </div>
       {noClusterError}
       {/* <NavBar /> */}
