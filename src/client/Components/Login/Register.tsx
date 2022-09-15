@@ -75,7 +75,7 @@ const Register = () => {
         textAlign: 'center',
         alignItems: 'center',
         backgroundSize: 'contain',
-        bgColor: '#3a4a5b',
+        bgColor: 'white',
       }} 
       className='backdrop'
     >
@@ -88,7 +88,7 @@ const Register = () => {
             opacity: '95%',
             direction: 'column',
             textAlign: 'center',
-            color: '#3a4a5b',
+            color: '#1976d2',
             alignItems: 'center',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -152,7 +152,7 @@ const Register = () => {
             variant='contained'
             sx={{
               color: 'white', 
-              backgroundColor: '#3a4a5b', 
+              backgroundColor: '#1976d2', 
               borderColor: 'white',
             }}
           > 
@@ -163,7 +163,7 @@ const Register = () => {
             variant='contained'
             sx={{
               color: 'white', 
-              backgroundColor: '#3a4a5b', 
+              backgroundColor: '#1976d2', 
               borderColor: 'white',
             }}
             type='button'

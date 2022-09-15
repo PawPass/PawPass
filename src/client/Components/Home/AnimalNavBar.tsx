@@ -21,6 +21,9 @@ export default function SearchAppBar() {
     navigate('/home');
   };
 
+  const routeKolache = () => {
+    navigate('/kolache');
+  };
   const routeAdmin = () => {
     navigate('/admin');
   };
@@ -114,6 +117,17 @@ export default function SearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <Button
+            id="basic-button"
+            onClick={routeKolache}
+            variant="text"
+            sx={{
+              color: "white"
+            }}
+          >
+            Search
+          </Button>
+
           <Button
             id="basic-button"
             onClick={handleLogOut}

@@ -1,4 +1,4 @@
-import express, { Request, Response, Router, Express } from 'express';
+import express, { Request, Response, Router, Express, NextFunction } from 'express';
 import path from 'path';
 import cors from 'cors';
 import router from './route';
@@ -16,7 +16,11 @@ import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-
 dotenv.config();
 
 const app: Express = express();
-app.get('/test', (req: Request, res: Response) => res.send('test server...'));
+
+// app.use((req: Request, res: Response, next: NextFunction) => {
+//   res.header('Access-Control-Allow-Origin', '');
+//   next();
+// });
 
 app.use(session( {secret: 'cats'}));
 app.use(passport.initialize());
@@ -34,7 +38,7 @@ const port: number = Number(process.env.EXPRESS_PORT) || 3000;
 app.use(express.static(path.join(__dirname, '../dist')));
 
 
-app.use('/api', userRouter);
+app.use('/', userRouter);
 app.use('/', petRouter);
 app.use('/', rentRouter);
 

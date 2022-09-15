@@ -5,8 +5,13 @@ h3 {
 .petCardContainer {
   margin: 2%;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.rent {
+  display: flex;
+  justify-content: center;
 }
 
 .petCard {

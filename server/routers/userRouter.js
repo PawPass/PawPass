@@ -10,8 +10,8 @@ const userRouter = (0, express_1.Router)();
 // routes
 // register routers
 // userRouter: get /user, post /user, update /user, delete /user
-userRouter.get('/auth2', (req, res) => {
-    res.send('<a href="/auth/google"> Authenticate with Google</a>');
+userRouter.get('/api/auth2', (req, res) => {
+    res.json('<a href="/auth/google"> Authenticate with Google</a>');
 });
 userRouter.get('/protected', auth_1.isLoggedIn, (req, res) => {
     res.send(`Hello`);

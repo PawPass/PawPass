@@ -33,7 +33,7 @@ const Admin = () => {
     fontSize: '10px',
   });
   const [buttonStyle] = useState({
-    background: '#3a4a5b',
+    background: '#1976d2',
     borderRadius: '5px',
     marginBottom: '0px',
     width: '100%',

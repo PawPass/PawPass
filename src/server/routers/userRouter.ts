@@ -7,8 +7,8 @@ const userRouter = Router();
 // register routers
 // userRouter: get /user, post /user, update /user, delete /user
 
-userRouter.get('/auth2', (req: Request, res: Response) => {
-    res.send('<a href="/auth/google"> Authenticate with Google</a>');
+userRouter.get('/api/auth2', (req: Request, res: Response) => {
+    res.json('<a href="/auth/google"> Authenticate with Google</a>');
 });
 
 userRouter.get('/protected', isLoggedIn, (req: Request, res: Response) => {
@@ -18,7 +18,8 @@ userRouter.get('/protected', isLoggedIn, (req: Request, res: Response) => {
 userRouter.get('/logout', (req: Request, res: Response) => {
     req.logout({keepSessionInfo: false}, (err) => console.log('logout err', err));
     res.send('Goodbye!');
-})
+});
+
 userRouter.get('/auth/google', 
   passport.authenticate('google', { scope: ['email', 'profile']})
 );
