@@ -14,18 +14,19 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/angel.jpg"
+          height="250"
+          image="../../../../images/Doji.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Angel
+            Doji
           </Typography>
+          <h5>Owner: Murad</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            The most adorable pit bull you will ever meet. She loves 
-            going to the park and having her nails painted.
+            He was purchased with Dogecoin, and will shake his head no
+            if he disapproves of you (which he does).
           </Typography>
         </CardContent>
         <CardActions>
@@ -37,13 +38,62 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
+          height="250"
+          image="../../../../images/angel.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Angel
+          </Typography>
+          <h5>Owner: Jeff</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            The most adorable pit bull you will ever meet. She loves 
+            going to the park and having her nails painted.
+            
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/starburst.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Starburst
+          </Typography>
+          <h5>Owner: Crystal</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            Extremely sweet and gentle Parakeet who will keep you company while you code!
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+  
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
           image="../../../../images/yoshi.png"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Yoshi
           </Typography>
+          <h5>Owner: Kat</h5>
           <Typography
             variant="body2"
             color="text.secondary">
@@ -59,19 +109,20 @@ export default function PetCard() {
 
       <Card sx={{ maxWidth: 345}} className='petCard'>
         <CardMedia
-          height= "180"
+          height= "250"
           component="img"
           // square
-          image='../../../../images/Athena.jpg'
+          image='../../../../images/bentley.jpg'
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Athena
+            Bentley
           </Typography>
+          <h5>Owner: Richard</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            Athena is a goofy gal who loves belly rubs and long naps 
+            Bentley is a goofy gal who loves belly rubs and long naps 
             in the sun.
           </Typography>
         </CardContent>
@@ -84,18 +135,19 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/jasmine.jpg"
+          height="250"
+          image="../../../../images/benji.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Jasmine
+            Benji
           </Typography>
+          <h5>Owner: Samee</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            She is as sassy as she looks. She enjoys belly rubs for 
-            exactly 3 seconds.
+            She is as ridiculous as she looks. If there is mud anywhere
+            within 10 miles, she will find it.
           </Typography>
         </CardContent>
         <CardActions>
@@ -107,18 +159,18 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/whispers.jpg"
+          height="250"
+          image="../../../../images/mango.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Whispers
+            Mango
           </Typography>
+          <h5>Owner: Murad</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            He got his name because if you hold him up to your ear
-            you can hear him make cute little noises. And he loves apples!
+            Raised by Murad since she was 2 days old.
           </Typography>
         </CardContent>
         <CardActions>
@@ -130,17 +182,19 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/Tater-Tot.jpg"
+          height="250"
+          image="../../../../images/lemy.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Tater Tot
+            Lemy
           </Typography>
+          <h5>Owner: Mimi</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            He is highly mischevious and loves to chew on shoes!
+            Lemy is a derp, but he makes up for it with
+            cuteness.
           </Typography>
         </CardContent>
         <CardActions>
@@ -152,18 +206,18 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/chipandDale.jpg"
+          height="250"
+          image="../../../../images/jax.jpeg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Chip and Dale
+            Jax
           </Typography>
+          <h5>Owner: Nick</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            These two have been inseparable since birth. They talk a lot
-            and poop a lot.
+            Jax will take a nap wherever he drops. 
           </Typography>
         </CardContent>
         <CardActions>
@@ -175,18 +229,19 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/cooper.jpg"
+          height="250"
+          image="../../../../images/kolache.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Cooper
+            Kolache
           </Typography>
+          <h5>Owner: Will Paragraph</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            Cooper the pooper loves to make trouble. Watch out 
-            for his begging, hes really good at it.
+            Kolache is as great as the food and will demand
+            your attention if you spend too much time coding.
           </Typography>
         </CardContent>
         <CardActions>
@@ -198,13 +253,38 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/farro.jpg"
+          height="250"
+          image="../../../../images/jackjack.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Farro
+            Jack Jack
           </Typography>
+          <h5>Owner: Victoria</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            As bright as a black hole, and as sweet
+            as pecan pie
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/lucy.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lucy (Goose)
+          </Typography>
+          <h5>Owner: Eli</h5>
           <Typography
             variant="body2"
             color="text.secondary">
@@ -220,17 +300,18 @@ export default function PetCard() {
       <Card sx={{ maxWidth: 345 }} className='petCard'>
         <CardMedia
           component="img"
-          height="180"
-          image="../../../../images/crush.jpg.webp"
+          height="250"
+          image="../../../../images/cookie.jpg"
           />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Crush
+            Cookie
           </Typography>
+          <h5>Owner: Chris</h5>
           <Typography
             variant="body2"
             color="text.secondary">
-            Really laid back and down to smoke weed all day.
+            So much sweetness in such a small package.
           </Typography>
         </CardContent>
         <CardActions>
@@ -238,8 +319,78 @@ export default function PetCard() {
           <Button size="small">Learn More</Button>
         </CardActions>
       </Card>
-    </div>
 
-    
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/ellie.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Ellie
+          </Typography>
+          <h5>Owner: Tyler</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            So much sweetness in such a small package.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/bailey.jpeg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Bailey
+          </Typography>
+          <h5>Owner: Chase</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            She loves basking in the sun and judging your system design
+            decisions.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+
+      <Card sx={{ maxWidth: 345 }} className='petCard'>
+        <CardMedia
+          component="img"
+          height="250"
+          image="../../../../images/goat.jpg"
+          />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Goat #0496
+          </Typography>
+          <h5>Owner: Rosendo</h5>
+          <Typography
+            variant="body2"
+            color="text.secondary">
+            Loves playing with all his siblings and only mildly 
+            resents having his ears pierced.
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button size="small">Rent</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
+      
+      </div> 
   );
 }

@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Get, Post, Put, Delete } from '../../Services/index';
 import { apiRoute } from '../../utils';
-import NavBar from '../Home/NavBar';
-import UserWelcome from '../Admin/UserWelcome';
+import AnimalNavBar from '../Home/AnimalNavBar';
 import { ClusterTypes } from '../../Interfaces/ICluster';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -268,370 +267,349 @@ const Admin = () => {
 
   return (
     <div>
-      <UserWelcome />
-      <Accordion 
-        sx={{
-          marginTop: '0.5rem'
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
+      <AnimalNavBar/>
+      <Box>
+        <Accordion 
+          sx={{
+            marginTop: '0.5rem'
+          }}
         >
-          Administrator Account Details
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container 
-            sx={containerStyle}
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
           >
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownUpdate}
-                autoComplete="current-password"
-                id="update-username-input"
-                type="username"
-                label="Username"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownUpdate}
-                autoComplete="current-password"
-                id="update-firstName-input"
-                type="firstName"
-                label="First Name"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownUpdate}
-                autoComplete="current-password"
-                id="update-lastName-input"
-                type="userName"
-                label="Last Name"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <Button 
-                variant="contained" 
-                className="btn" 
-                type="button" 
-                onClick={handleUserUpdate}
-                sx={buttonStyle}
-              >
-                Update Admin Details
-              </Button>
-              <span id='update-user-err'>
-                {updateUserErr}
-              </span>
-            </div>
-          </Container>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          Delete Administrator Account
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container
-            sx={containerStyle}
-          >
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownDelete}
-                id="delete-password-input"
-                type="password"
-                label="Enter Password to Confirm Deletion"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <Button 
-                id="delete-password-input" 
-                variant="contained" 
-                className="btn" 
-                type="button" 
-                onClick={handleUserDelete}
-                sx={buttonStyle}
-              >
-                Delete
-              </Button>
-              <span id='delete-password-err'>
-                {deletePasswordErr}
-              </span>
-            </div>
-          </Container>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion 
-        sx={{
-          marginTop: '0.5rem'
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          Add Cluster
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container
-            sx={containerStyle}
-          >
-            <TextField
-              onKeyDown={handleEnterKeyDownAddCluster}
-              id="cluster-url"
-              type="text"
-              label="Cluster URL"
-              variant="filled"
-              size='small'
-              margin="dense"
-              sx={textFieldStyle}
-            />
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="k8_port"
-                type="text"
-                label="Kubernetes Port"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="faas_port"
-                type="text"
-                label="FaaS Port"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="faas_username"
-                type="username"
-                label="FaaS Username"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="faas_password"
-                type="password"
-                label="FaaS Password"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="cluster-name"
-                type="text"
-                label="Cluster Name"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownAddCluster}
-                id="cluster-description"
-                type="text"
-                label="Cluster Description"
-                variant="filled"
-                size='small'
-                margin="dense"
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <Button 
-                variant="contained" 
-                className="btn" 
-                type="button" 
-                onClick={handleAddCluster}
-                sx={buttonStyle}
-              >
-                Add Cluster
-              </Button>
-              <div id='add-cluster-msg'>
-                {addClusterMessage}
-              </div>
-            </div>
-          </Container>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          Cluster Refresh Rate
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container
-            sx={containerStyle}
-          >
-            <div>
-              <TextField
-                onKeyDown={handleEnterKeyDownRefreshRate}
-                id="refresh-rate-input"
-                type="text"
-                label="Enter Refresh Rate in Seconds"
-                variant="filled"
-                size='small'
-                margin="dense"
-                placeholder={`Currently set to ${String(refreshRate)} seconds`}
-                sx={textFieldStyle}
-              />
-            </div>
-            <div>
-              <Button 
-                id="refresh-rate-input" 
-                variant="contained" 
-                className="btn" 
-                type="button" 
-                onClick={handleRefreshRate}
-                sx={buttonStyle}
-              >
-                Update Refresh Rate
-              </Button>
-              <div>
-                {updateRefreshRateMessage}
-              </div>
-            </div>
-          </Container>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          Dark Mode
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container
-            sx={containerStyle}
-          >
-            {
-              !darkMode &&
-              <Button 
-                variant="contained" 
-                className="btn" 
-                type="button"
-                onClick={handleDarkMode}
-                sx={buttonStyle}
-              >
-                Enable Dark Mode
-              </Button>
-            }
-            {
-              darkMode &&
-              <Button 
-                variant="contained" 
-                className="btn" 
-                type="button"
-                onClick={handleDarkMode}
-                sx={buttonStyle}
-              >
-                Disable Dark Mode
-              </Button>
-            }
-          </Container>
-        </AccordionDetails>
-      </Accordion>
-
-      <Accordion
-        sx={{
-          marginTop: '0.5rem'
-        }}
-      >
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          About VaaS
-        </AccordionSummary>
-        <AccordionDetails>
-          <Container
-            sx={containerStyle}
-          >
-            <Button 
-              variant="contained" 
-              className="btn" 
-              type="button"
-              sx={buttonStyle}
-              onClick={() => window.open('https://vaas.dev/', '_blank', 'noopener,noreferrer')}
+            Add Pet
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container
+              sx={containerStyle}
             >
-              Learn about the project
-            </Button>
-            <Box sx={{textAlign: 'center'}}>
-              <h3>
-                Developed by:
-              </h3>
-              <p>
-                Murad Alqadi
-              </p>
-              <p>
-                Kevin Le
-              </p>
-              <p>
-                Richard Zhang
-              </p>
-              <p>
-                Irvin Ie
-              </p>
-            </Box>
-          </Container>
-        </AccordionDetails>
-      </Accordion>
+              <TextField
+                onKeyDown={handleEnterKeyDownAddCluster}
+                id="cluster-url"
+                type="text"
+                label="Pet Name"
+                variant="filled"
+                size='small'
+                margin="dense"
+                sx={textFieldStyle}
+              />
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="k8_port"
+                  type="text"
+                  label="Species"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="faas_port"
+                  type="text"
+                  label="Breed"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="faas_username"
+                  type="text"
+                  label="Age"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="faas_password"
+                  type="text"
+                  label="Color"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="cluster-name"
+                  type="text"
+                  label="Temperament"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownAddCluster}
+                  id="cluster-description"
+                  type="text"
+                  label="Feeding Instructions"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <Button 
+                  variant="contained" 
+                  className="btn" 
+                  type="button" 
+                  onClick={handleAddCluster}
+                  sx={buttonStyle}
+                >
+                  Add Pet
+                </Button>
+                <div id='add-cluster-msg'>
+                  {addClusterMessage}
+                </div>
+              </div>
+            </Container>
+          </AccordionDetails>
+        </Accordion>
 
-      <NavBar />
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            Notification Settings
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container
+              sx={containerStyle}
+            >
+
+              <div>
+                <Button 
+                  id="refresh-rate-input" 
+                  variant="contained" 
+                  className="btn" 
+                  type="button" 
+                  onClick={handleRefreshRate}
+                  sx={buttonStyle}
+                >
+                  Notifications On
+                </Button>
+                <div>
+                  {updateRefreshRateMessage}
+                </div>
+              </div>
+            </Container>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            Dark Mode
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container
+              sx={containerStyle}
+            >
+              {
+                !darkMode &&
+                <Button 
+                  variant="contained" 
+                  className="btn" 
+                  type="button"
+                  onClick={handleDarkMode}
+                  sx={buttonStyle}
+                >
+                  Enable Dark Mode
+                </Button>
+              }
+              {
+                darkMode &&
+                <Button 
+                  variant="contained" 
+                  className="btn" 
+                  type="button"
+                  onClick={handleDarkMode}
+                  sx={buttonStyle}
+                >
+                  Disable Dark Mode
+                </Button>
+              }
+            </Container>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion 
+          sx={{
+            marginTop: '0.5rem'
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            Account Details
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container 
+              sx={containerStyle}
+            >
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownUpdate}
+                  autoComplete="current-password"
+                  id="update-username-input"
+                  type="username"
+                  label="Username"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownUpdate}
+                  autoComplete="current-password"
+                  id="update-firstName-input"
+                  type="firstName"
+                  label="First Name"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownUpdate}
+                  autoComplete="current-password"
+                  id="update-lastName-input"
+                  type="userName"
+                  label="Last Name"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <Button 
+                  variant="contained" 
+                  className="btn" 
+                  type="button" 
+                  onClick={handleUserUpdate}
+                  sx={buttonStyle}
+                >
+                  Update Account Details
+                </Button>
+                <span id='update-user-err'>
+                  {updateUserErr}
+                </span>
+              </div>
+            </Container>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            Delete Your Account
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container
+              sx={containerStyle}
+            >
+              <div>
+                <TextField
+                  onKeyDown={handleEnterKeyDownDelete}
+                  id="delete-password-input"
+                  type="password"
+                  label="Enter Password to Confirm Deletion"
+                  variant="filled"
+                  size='small'
+                  margin="dense"
+                  sx={textFieldStyle}
+                />
+              </div>
+              <div>
+                <Button 
+                  id="delete-password-input" 
+                  variant="contained" 
+                  className="btn" 
+                  type="button" 
+                  onClick={handleUserDelete}
+                  sx={buttonStyle}
+                >
+                  Delete
+                </Button>
+                <span id='delete-password-err'>
+                  {deletePasswordErr}
+                </span>
+              </div>
+            </Container>
+          </AccordionDetails>
+        </Accordion>
+
+        <Accordion
+          sx={{
+            marginTop: '0.5rem'
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            About PawPass
+          </AccordionSummary>
+          <AccordionDetails>
+            <Container
+              sx={containerStyle}
+            >
+              <Box sx={{textAlign: 'center'}}>
+                <h3>
+                  Developed by:
+                </h3>
+                <p>
+                  Murad Alqadi
+                </p>
+                <p>
+                  Luke Roberts
+                </p>
+                <p>
+                  Hui Mu
+                </p>
+                <p>
+                  Irvin Ie
+                </p>
+              </Box>
+            </Container>
+          </AccordionDetails>
+        </Accordion>
+      </Box>
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../Store/hooks';
 import { apiRoute } from '../../utils';
 import { setTitle } from '../../Store/actions';
-import { Put } from '../../Services/index';
+import { Put, Get } from '../../Services/index';
 import { IReducers } from '../../Interfaces/IReducers';
 import { Container, Box, Button, TextField } from '@mui/material';
 import './styles.css';
@@ -55,6 +55,17 @@ const Login = () => {
     }
   };
 
+  const handleGoogleLogin = async (): Promise<void> => {
+    try {
+      const res = await Get(
+        apiRoute.getRoute('auth2')
+      )
+      .catch(err => console.log(err));
+    } catch (err) {
+      console.log('Get failed');
+    }
+  };
+
   const handleEnterKeyDown = (e: React.KeyboardEvent<HTMLInputElement>): void => {
     if (e.key === 'Enter') handleLogin();
   };
@@ -95,7 +106,7 @@ const Login = () => {
           }}
         >
           <div>
-            <h1>VaaS</h1>
+            <h1>PawPass</h1>
           </div>
           <TextField
               id="login-username-input"
@@ -139,6 +150,7 @@ const Login = () => {
             >
               Login
             </Button>
+            
             <Button 
               className="btn" 
               type="button" 
@@ -151,6 +163,29 @@ const Login = () => {
               }}
             >
               Register
+            </Button>
+          </Container>
+          <Container 
+            id = 'buttonContainer2' 
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              gap: '.5em',
+              padding: '.5em',
+            }}
+          >
+            <Button 
+              className="btn" 
+              type="button" 
+              onClick={handleGoogleLogin}
+              variant='contained'
+              sx={{
+                color: 'white', 
+                backgroundColor: '#3a4a5b', 
+                borderColor: 'white',
+              }}
+            >
+              Sign In with Google
             </Button>
           </Container>
         </Box>

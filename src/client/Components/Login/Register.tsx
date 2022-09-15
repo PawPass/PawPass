@@ -98,7 +98,7 @@ const Register = () => {
         }}
       >
         <div>
-          <h2>VaaS Registration</h2>
+          <h2>PawPass Registration</h2>
         </div>
         <TextField
           id='firstName-input'
